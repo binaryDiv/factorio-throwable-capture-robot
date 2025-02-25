@@ -1,0 +1,10 @@
+# IDEs / editors
+/.idea
+/.vscode
+
+# General
+/tmp
+/_tmp
+
+# Screenshots for the mod portal
+/screenshots
