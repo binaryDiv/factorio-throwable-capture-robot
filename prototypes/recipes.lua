@@ -1,5 +1,3 @@
-local utils = require("prototypes.utils")
-
 -- Define recipe for capture robot capsule (same as for the original rocket)
 local capture_robot_capsule_recipe = {
     type = "recipe",
@@ -20,11 +18,3 @@ local capture_robot_capsule_recipe = {
 
 -- Add prototype
 data:extend { capture_robot_capsule_recipe }
-
--- Check mod setting: Replace capture bot rocket?
-if utils.settings.get_replace_rocket() then
-    -- Remove recipe for capture-robot-rocket
-    data.raw["recipe"]["capture-robot-rocket"] = nil
-
-    -- NOTE: Existing recipes that use the capture bot rocket as an ingredient will be fixed in data-updates.lua
-end
