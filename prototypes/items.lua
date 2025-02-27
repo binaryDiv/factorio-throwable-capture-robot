@@ -1,3 +1,5 @@
+local utils = require("prototypes.utils")
+
 local sounds = require("__base__.prototypes.entity.sounds")
 local item_sounds = require("__base__.prototypes.item_sounds")
 
@@ -56,5 +58,11 @@ local capture_robot_capsule = {
     drop_sound = item_sounds.robotic_inventory_move,
 }
 
--- Add prototype
+-- Add item prototype
 data:extend { capture_robot_capsule }
+
+-- Check mod setting: Replace capture bot rocket?
+if utils.settings.get_replace_rocket() then
+    -- Remove capture bot rocket item
+    data.raw["ammo"]["capture-robot-rocket"] = nil
+end
