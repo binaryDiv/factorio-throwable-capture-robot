@@ -16,5 +16,10 @@ local capture_robot_capsule_recipe = {
     enabled = false,
 }
 
+-- Mod compatibility: Robotics Facility
+if data.raw["recipe-category"]["robotics"] ~= nil then
+    capture_robot_capsule_recipe.category = "robotics"
+end
+
 -- Add prototype
 data:extend { capture_robot_capsule_recipe }
