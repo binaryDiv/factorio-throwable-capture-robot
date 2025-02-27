@@ -1,6 +1,6 @@
 # Factorio Mod: Throwable Capture Bots
 
-Factorio mod that provides a throwable alternative to the capture bot rocket, making the rocket launcher obsolete in a pacifist run.
+Factorio mod that replaces the capture bot rocket with a throwable capture bot capsule, making the rocket launcher obsolete in a pacifist run.
 
 **Mod portal:** https://mods.factorio.com/mod/throwable-capture-robot
 

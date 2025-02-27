@@ -5,7 +5,7 @@
     "author": "binaryDiv",
     "contact": "factorio@binarydiv.dev",
     "homepage": "https://github.com/binaryDiv/factorio-throwable-capture-robot",
-    "description": "Provides a throwable alternative to the capture bot rocket, making the rocket launcher obsolete in a pacifist run.",
+    "description": "Replaces the capture bot rocket with a throwable capture bot capsule, making the rocket launcher obsolete in a pacifist run.",
     "factorio_version": "2.0",
     "dependencies": [
         "base >= 2.0",
