@@ -1,7 +1,7 @@
 {
     "name": "throwable-capture-robot",
-    "version": "0.0.1",
-    "title": "Throwable Capture Bot (WIP)",
+    "version": "1.0.0",
+    "title": "Throwable Capture Bot",
     "author": "binaryDiv",
     "contact": "factorio@binarydiv.dev",
     "homepage": "https://github.com/binaryDiv/factorio-throwable-capture-robot",

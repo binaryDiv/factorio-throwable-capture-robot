@@ -1,0 +1,8 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 07. 03. 2025
+  Major Features:
+    - Initial release.
+  Translation:
+    - Added English translation.
+    - Added German translation.
