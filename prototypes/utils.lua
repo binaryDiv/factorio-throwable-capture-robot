@@ -15,8 +15,12 @@ function utils.settings.get_replace_rocket()
 end
 
 -- Add an effect to unlock a recipe to a technology. If no position is given, the effect will be appended.
-function utils.technologies.add_recipe(technology_name, new_recipe, position)
+function utils.technologies.add_recipe_unlock(technology_name, new_recipe, position)
     local technology = data.raw["technology"][technology_name]
+
+    if not technology then
+        return
+    end
 
     -- Append if no position is specified
     if position == nil then
@@ -35,12 +39,28 @@ function utils.technologies.add_recipe(technology_name, new_recipe, position)
 end
 
 -- Replace a recipe unlocked by a technology with a different one
-function utils.technologies.replace_recipe(technology_name, old_recipe, new_recipe)
+function utils.technologies.replace_recipe_unlock(technology_name, old_recipe, new_recipe)
     local technology = data.raw["technology"][technology_name]
 
-    for _, effect in pairs(technology.effects) do
-        if effect.type == "unlock-recipe" and effect.recipe == old_recipe then
-            effect.recipe = new_recipe
+    if technology and technology.effects then
+        for _, effect in pairs(technology.effects) do
+            if effect.type == "unlock-recipe" and effect.recipe == old_recipe then
+                effect.recipe = new_recipe
+            end
+        end
+    end
+end
+
+-- Remove a recipe unlock effect from a technology
+function utils.technologies.remove_recipe_unlock(technology_name, recipe_name)
+    local technology = data.raw["technology"][technology_name]
+
+    if technology and technology.effects then
+        for i, effect in pairs(technology.effects) do
+            if effect.type == "unlock-recipe" and effect.recipe == recipe_name then
+                table.remove(technology.effects, i)
+                return
+            end
         end
     end
 end
@@ -49,10 +69,12 @@ end
 function utils.technologies.remove_prerequisite(technology_name, prerequisite)
     local technology = data.raw["technology"][technology_name]
 
-    for index, entry in pairs(technology.prerequisites) do
-        if entry == prerequisite then
-            table.remove(technology.prerequisites, index)
-            return
+    if technology and technology.prerequisites then
+        for index, entry in pairs(technology.prerequisites) do
+            if entry == prerequisite then
+                table.remove(technology.prerequisites, index)
+                return
+            end
         end
     end
 end

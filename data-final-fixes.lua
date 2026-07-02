@@ -8,6 +8,7 @@ if utils.settings.get_replace_rocket() then
     -- Remove recipe for capture-robot-rocket, as well as its recycling recipe
     data.raw["recipe"]["capture-robot-rocket"] = nil
     data.raw["recipe"]["capture-robot-rocket-recycling"] = nil
+    utils.technologies.remove_recipe_unlock("recycling", "capture-robot-rocket-recycling")
 
     -- Remove capture bot rocket item
     data.raw["ammo"]["capture-robot-rocket"] = nil

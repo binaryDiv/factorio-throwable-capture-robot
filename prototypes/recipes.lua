@@ -3,6 +3,7 @@ local capture_robot_capsule_recipe = {
     type = "recipe",
     name = "capture-robot-capsule",
     energy_required = 10,
+    categories = {"crafting"},
     ingredients = {
         { type = "item", name = "flying-robot-frame", amount = 1 },
         { type = "item", name = "steel-plate", amount = 2 },
@@ -18,7 +19,7 @@ local capture_robot_capsule_recipe = {
 
 -- Mod compatibility: Robotics Facility
 if data.raw["recipe-category"]["robotics"] ~= nil then
-    capture_robot_capsule_recipe.category = "robotics"
+    table.insert(capture_robot_capsule_recipe.categories, "robotics")
 end
 
 -- Add prototype
